@@ -1,0 +1,66 @@
+<app-main-nav>
+    <h1>Add Product</h1>
+    
+    <hr>
+    
+<div class="container p-5">
+    <form [formGroup] ="addProductForm" (ngSubmit)="addProduct()">
+
+      <!-- <div class="row">
+        <div class="col-25">
+          <label for="pid">Product Id</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="pid" name="productid" placeholder="Product Id.."  formControlName="id">
+        </div>
+      </div> -->
+
+    <div class="row">
+      <div class="col-25">
+        <label for="pname">Product Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" placeholder="Product name.."  formControlName="name" required>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="category">Product Price</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="price" name="price" placeholder="Price of the product .." min="1"  formControlName="price" required>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="punit">Product Units</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="stock" name="stock" placeholder="Enter units (Number Only)" min="1"  formControlName="stock" required>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="description">Product Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" name="description" placeholder="About Product.." style="height:200px"  formControlName="description"></textarea>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <input type="submit" value="Add Product">
+
+      <br>
+      <br>
+
+      <label class="error-message">{{ errMessage }}</label>
+      <br>
+      <br>
+      <label class="successMessage">{{ successMessage }}</label>
+      
+      
+    </div>
+    </form>
+    </div>
+    </app-main-nav>

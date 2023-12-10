@@ -1,0 +1,53 @@
+<app-main-nav>
+    <h1>Update Product</h1>
+    
+    
+<div class="container p-5">
+    <form [formGroup] ="updateProductForm" (ngSubmit)="updateProduct()">
+    <div class="row">
+      <div class="col-25">
+        <label for="pname">Product Name</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="name" name="name" placeholder="Product name.." [(ngModel)]="product.name" formControlName="name" required> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="category">Product Price</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="price" name="price" [(ngModel)]="product.price"  formControlName="price" required>
+
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-25">
+          <label for="punit">Product Stock</label>
+        </div>
+        <div class="col-75">
+          <input type="number" id="stock" name="stock" placeholder="Enter units.." min="1" [(ngModel)]= "product.stock" formControlName="stock" required>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="description">Product Description</label>
+      </div>
+      <div class="col-75">
+        <textarea id="description" name="description" placeholder="Write something.." style="height:200px" [(ngModel)]= "product.description"  formControlName="description" required></textarea>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <input type="submit" value="Update product" >
+
+      <br>
+      <label class="error-message">{{ errMessage }}</label>
+      <br>
+      <br>
+      <label class="successMessage">{{ successMessage }}</label>
+      
+    </div>
+    </form>
+    </div>
+    </app-main-nav>

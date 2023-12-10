@@ -1,0 +1,78 @@
+<app-main-nav>
+    <h1>Get All Products</h1>
+    
+<hr>
+    <table id="product">
+        <tr>
+            <th (click)="sort('id')">
+                ID&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+
+            <th (click)="sort('name')">
+                Product Name&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('description')">
+                Product Description&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('price')">
+                Price&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('stock')">
+                Units&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th>
+                Update
+            </th>
+            <th>
+                Delete
+            </th>
+            
+        </tr>
+
+        <tr *ngFor = "let product of productList | orderBy: key:reverse">
+            <td>
+                {{product.id}}
+            </td>
+            <td>
+                {{product.name}}
+            </td>
+            <td>
+                {{product.description}}
+            </td>
+            <td>
+                {{product.price}}
+            </td>
+            <td>
+                {{product.stock}}
+            </td>       
+            
+            <td>
+                <span class="material-icons edit" (click)="updateProduct(product)">
+                        border_color
+                    </span>
+            </td>    
+
+            <td>
+                <span class="material-icons delete" (click)="deleteProduct(product)">
+                    delete
+                    </span>
+                
+            </td>    
+
+
+        </tr>
+
+
+    </table>
+    
+    </app-main-nav>

@@ -1,0 +1,10 @@
+runtime: python27
+api_version: 1
+service: inventory-ui
+threadsafe: true
+handlers:
+  - url: /
+    static_files: dist/InventoryManagement/index.html
+    upload: dist/InventoryManagement/index.html
+  - url: /
+    static_dir: dist/InventoryManagement
